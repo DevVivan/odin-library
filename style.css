@@ -102,6 +102,11 @@
     z-index: 3;
     outline: none;
     border: none;
+    border-radius: 10px;
+}
+
+.modal::backdrop {
+    background-color: rgb(0, 0, 0, 0.5);
 }
 
 .title-container {
