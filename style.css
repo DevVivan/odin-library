@@ -49,7 +49,7 @@
 
 .book-list {
     display: grid;
-    margin-top: 10vh;
+    margin-top: 11vh;
     margin-left: 23vh;
     margin-right: 23vh;
     justify-items: center;
@@ -90,6 +90,18 @@
     font-size: 22px;
     margin-top: 10px;
     text-align: center;
+}
+
+.modal {
+    height: 50vh;
+    width: 39vh;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    position: absolute;
+    z-index: 3;
+    outline: none;
+    border: none;
 }
 
 .title-container {

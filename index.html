@@ -30,9 +30,19 @@
                 </div>
                 <button class="remove-book-button">Remove</button>
             </div>
-            
         </div>
     </div>
+    <dialog class="modal">
+        <h1>Add a new book</h1>
+        <form class="book-form" method="dialog" action="">
+            <input type="text" name="book-title-input" id="book-title-input" placeholder="Title">
+            <input type="text" name="book-author-input" id="book-author-input" placeholder="Author">
+            <input type="number" name="book-pages-input" id="book-pages-input" placeholder="Pages">
+            <label for="">Read it?</label>
+            <input type="checkbox">
+            <button class="submit-book-button" type="submit"></button>
+        </form>
+    </dialog>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="script.js"></script>
