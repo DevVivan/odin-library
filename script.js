@@ -13,7 +13,7 @@ submitBookButton.addEventListener('click', () => {
 let library = [
     new Book('Book 1', 'Author 1', '100 pages'),
     new Book('Book 2', 'Author 2', '100 pages'),
-    new Book('Book 3', 'Author 3', '100 pages')
+    new Book('Book 3', 'Author 3', '100 pages'),
 ];
 
 function Book(title, author, pages) {
@@ -35,5 +35,7 @@ function addBookToLibrary() {
 }
 
 for (let i = 0; i < library.length; i++) {
-    console.log(library[i].author)
+    let bookCard = document.createElement('div');
+    bookCard.classList.add('book');
+    document.querySelector('.book-list').appendChild(bookCard)
 }
