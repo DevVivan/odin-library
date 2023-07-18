@@ -60,12 +60,36 @@
 }
 
 .book {
-    padding: 190px 160px;
+    height: 42vh;
+    width: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     border-radius: 20px;
     background-color: white;
     position: relative;
     z-index: 2;
     box-shadow: 0px 0px 20px 2px rgb(0, 0, 0, 0.3);
+}
+
+.book-title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.book-author{
+    font-size: 22px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.book-pages {
+    font-size: 22px;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .title-container {
