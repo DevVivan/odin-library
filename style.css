@@ -20,6 +20,7 @@
 .new-book-button {
     margin-right: 24vh;
     display: flex;
+    gap: 5px;
     outline: none;
     align-items: center;
     justify-content: center;
@@ -30,7 +31,7 @@
     border: none;
     background-color: #f0f0f0;
     height: 50px;
-    width: 130px;
+    width: 140px;
     cursor: pointer;
 }
 
