@@ -77,6 +77,34 @@
     position: relative;
     z-index: 2;
     box-shadow: 0px 0px 20px 2px rgb(0, 0, 0, 0.3);
+    overflow: scroll;
+    gap: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.read-status-checkbox {
+    width: 200px;
+    height: 40px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #e3e3e3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.read-status-checkbox:checked {
+    background-color: grey;
+}
+
+.remove-book-button {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e3e3e3;
+    cursor: pointer;
 }
 
 .book-title {
@@ -172,6 +200,10 @@ form {
     outline: none;
     border: 1px solid black;
     border-radius: 5px;
+}
+
+.book-details {
+    width: 250px;
 }
 
 .submit-book-button:hover {

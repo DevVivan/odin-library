@@ -21,9 +21,9 @@
     <div class="main-content">
         <div class="book-list">
             <div class="book">
-                <h1 class="book-title">This is a book</h1>
-                <h2 class="book-author">By this author</h2>
-                <h2 class="book-pages">460 pages</h2>
+                <h1 class="book-title book-details">Harry Potter</h1>
+                <h2 class="book-author book-details">By J.K Rowling</h2>
+                <h2 class="book-pages book-details">460 pages</h2>
                 <div class="read-status-container">
                     <label for="read-status-checker" class="checker"></label>
                     <input class="read-status-checkbox" type="checkbox" name="read-status-checker" id="read-status-checker">
@@ -35,9 +35,9 @@
     <dialog class="modal">
         <h1 class="add-new-book-heading">Add a new book</h1>
         <form class="book-form" method="dialog" action="">
-            <input type="text" name="book-title-input" class="book-input" id="book-title-input" placeholder="Title">
-            <input type="text" name="book-author-input" class="book-input" id="book-author-input" placeholder="Author">
-            <input type="number" name="book-pages-input" class="book-input" id="book-pages-input" placeholder="Pages">
+            <input type="text" name="book-title-input" class="book-input" id="book-title-input" placeholder="Title" required>
+            <input type="text" name="book-author-input" class="book-input" id="book-author-input" placeholder="Author" required>
+            <input type="number" name="book-pages-input" class="book-input" id="book-pages-input" placeholder="Pages" required>
             <div class="read-checker-container">
                 <label for="read-checkbox">Read it?</label>
                 <input class="read-checkbox" name="read-checkbox" id="read-checkbox" type="checkbox">
