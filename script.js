@@ -79,6 +79,12 @@ function addBookToLibrary() {
 
         library.push(new Book(bookTitleValue, bookAuthorValue, bookPagesValue))
         displayBooks();
+
+        if (bookReadStatusValue === true) {
+            // make styling for checkbox:checked::after - there should be content of 'Read', a background color of #bfbfbf, and color of black.
+        } else {
+            // keep doing the normal stuff with text content, checkbox::after and no unchecked - content of 'Not Read' 
+        }
     })
 }
 
