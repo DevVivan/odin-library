@@ -35,9 +35,11 @@ function addBookToLibrary() {
     newBookForm.addEventListener('submit', function(event) {
         event.preventDefault();
         let bookTitleValue = event.currentTarget.title.value;
-        let bookAuthorValue = event.currentTarget.author.value;
-        let bookPagesValue = event.currentTarget.pages.value;
+        let bookAuthorValue = 'By ' + event.currentTarget.author.value;
+        let bookPagesValue = event.currentTarget.pages.value + ' pages';
         let bookReadStatusValue = event.currentTarget.checkbox.checked;
+
+        library.push(new Book(bookTitleValue, bookAuthorValue, bookPagesValue))
     })
 }
 
