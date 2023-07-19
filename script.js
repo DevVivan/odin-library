@@ -42,17 +42,17 @@ for (let i = 0; i < library.length; i++) {
 
     let bookTitle = document.createElement('h1');
     bookTitle.classList.add('book-title', 'book-details');
-    bookTitle.textContent = library[i].title;
+    bookTitle.innerHTML = library[i].title;
     bookCard.appendChild(bookTitle);
 
     let bookAuthor = document.createElement('h2');
     bookAuthor.classList.add('book-author', 'book-details');
-    bookAuthor.textContent = library[i].author;
+    bookAuthor.innerHTML = library[i].author;
     bookCard.appendChild(bookAuthor);
 
     let bookPages = document.createElement('h2');
     bookPages.classList.add('book-pages', 'book-details');
-    bookPages.textContent = library[i].pages;
+    bookPages.innerHTML = library[i].pages;
     bookCard.appendChild(bookPages);
 
     let readCheckerContainer = document.createElement('div');
