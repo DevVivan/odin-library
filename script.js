@@ -3,6 +3,47 @@ const submitBookButton = document.querySelector('.submit-book-button')
 const modal = document.querySelector('.modal');
 const newBookForm = document.querySelector('.book-form');
 
+function displayBooks() {
+    for (let i = 0; i < library.length; i++) {
+        const bookList = document.querySelector('.book-list');
+        let bookCard = document.createElement('div');
+        bookCard.classList.add('book');
+        bookList.appendChild(bookCard);
+    
+        let bookTitle = document.createElement('h1');
+        bookTitle.classList.add('book-title', 'book-details');
+        bookTitle.innerHTML = library[i].title;
+        bookCard.appendChild(bookTitle);
+    
+        let bookAuthor = document.createElement('h2');
+        bookAuthor.classList.add('book-author', 'book-details');
+        bookAuthor.innerHTML = library[i].author;
+        bookCard.appendChild(bookAuthor);
+    
+        let bookPages = document.createElement('h2');
+        bookPages.classList.add('book-pages', 'book-details');
+        bookPages.innerHTML = library[i].pages;
+        bookCard.appendChild(bookPages);
+    
+        let readCheckerContainer = document.createElement('div');
+        readCheckerContainer.classList.add('read-checker-container');
+        let readCheckerLabel = document.createElement('label');
+        readCheckerLabel.setAttribute('for', 'read-status-checker');
+        readCheckerLabel.classList.add('checker');
+        let readCheckerInput = document.createElement('input');
+        readCheckerInput.classList.add('read-status-checkbox');
+        readCheckerInput.setAttribute('type', 'checkbox');
+        readCheckerInput.setAttribute('name', 'read-status-checker');
+        readCheckerInput.setAttribute('id', 'read-status-checker');
+        readCheckerContainer.appendChild(readCheckerInput);
+        bookCard.appendChild(readCheckerContainer);
+        let removeBookButton = document.createElement('button')
+        removeBookButton.classList.add('remove-book-button');
+        removeBookButton.innerHTML = 'Remove';
+        bookCard.appendChild(removeBookButton);
+    }
+}
+
 newBookButton.addEventListener('click', () => {
     modal.showModal();
 })
@@ -11,11 +52,7 @@ submitBookButton.addEventListener('click', () => {
     modal.close();
 })
   
-let library = [
-    new Book('Book 1', 'Author 1', '100 pages'),
-    new Book('Book 2', 'Author 2', '100 pages'),
-    new Book('Book 3', 'Author 3', '100 pages'),
-];
+let library = [];
 
 function Book(title, author, pages) {
     this.title = title;
@@ -33,6 +70,7 @@ Book.prototype.removeBook = function() {
   
 function addBookToLibrary() {
     newBookForm.addEventListener('submit', function(event) {
+        library = [];
         event.preventDefault();
         let bookTitleValue = event.currentTarget.title.value;
         let bookAuthorValue = 'By ' + event.currentTarget.author.value;
@@ -40,46 +78,9 @@ function addBookToLibrary() {
         let bookReadStatusValue = event.currentTarget.checkbox.checked;
 
         library.push(new Book(bookTitleValue, bookAuthorValue, bookPagesValue))
+        displayBooks();
     })
 }
 
 addBookToLibrary();
 
-for (let i = 0; i < library.length; i++) {
-    const bookList = document.querySelector('.book-list');
-    let bookCard = document.createElement('div');
-    bookCard.classList.add('book');
-    bookList.appendChild(bookCard);
-
-    let bookTitle = document.createElement('h1');
-    bookTitle.classList.add('book-title', 'book-details');
-    bookTitle.innerHTML = library[i].title;
-    bookCard.appendChild(bookTitle);
-
-    let bookAuthor = document.createElement('h2');
-    bookAuthor.classList.add('book-author', 'book-details');
-    bookAuthor.innerHTML = library[i].author;
-    bookCard.appendChild(bookAuthor);
-
-    let bookPages = document.createElement('h2');
-    bookPages.classList.add('book-pages', 'book-details');
-    bookPages.innerHTML = library[i].pages;
-    bookCard.appendChild(bookPages);
-
-    let readCheckerContainer = document.createElement('div');
-    readCheckerContainer.classList.add('read-checker-container');
-    let readCheckerLabel = document.createElement('label');
-    readCheckerLabel.setAttribute('for', 'read-status-checker');
-    readCheckerLabel.classList.add('checker');
-    let readCheckerInput = document.createElement('input');
-    readCheckerInput.classList.add('read-status-checkbox');
-    readCheckerInput.setAttribute('type', 'checkbox');
-    readCheckerInput.setAttribute('name', 'read-status-checker');
-    readCheckerInput.setAttribute('id', 'read-status-checker');
-    readCheckerContainer.appendChild(readCheckerInput);
-    bookCard.appendChild(readCheckerContainer);
-    let removeBookButton = document.createElement('button')
-    removeBookButton.classList.add('remove-book-button');
-    removeBookButton.innerHTML = 'Remove';
-    bookCard.appendChild(removeBookButton);
-}
