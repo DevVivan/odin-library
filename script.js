@@ -55,5 +55,21 @@ for (let i = 0; i < library.length; i++) {
     bookPages.textContent = library[i].pages;
     bookCard.appendChild(bookPages);
 
-    
+    let readCheckerContainer = document.createElement('div');
+    readCheckerContainer.classList.add('read-checker-container');
+    bookCard.appendChild(readCheckerContainer);
+    let readCheckerLabel = document.createElement('label');
+    readCheckerLabel.setAttribute('for', 'read-status-checker');
+    readCheckerLabel.classList.add('checker');
+    let readCheckerInput = document.createElement('input');
+    readCheckerInput.classList.add('read-status-checkbox');
+    readCheckerInput.setAttribute('type', 'checkbox');
+    readCheckerInput.setAttribute('name', 'read-status-checker');
+    readCheckerInput.setAttribute('id', 'read-status-checker');
+    readCheckerContainer.appendChild(readCheckerLabel);
+    readCheckerContainer.appendChild(readCheckerInput);
+    let removeBookButton = document.createElement('button')
+    removeBookButton.classList.add('remove-book-button');
+    removeBookButton.innerHTML = 'Remove';
+    bookCard.appendChild(removeBookButton);
 }
