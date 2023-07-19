@@ -35,7 +35,8 @@ function addBookToLibrary() {
 }
 
 for (let i = 0; i < library.length; i++) {
+    const bookList = document.querySelector('.book-list');
     let bookCard = document.createElement('div');
     bookCard.classList.add('book');
-    document.querySelector('.book-list').appendChild(bookCard)
+    bookList.appendChild(bookCard);
 }
