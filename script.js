@@ -1,6 +1,7 @@
 const newBookButton = document.querySelector('.new-book-button')
 const submitBookButton = document.querySelector('.submit-book-button')
 const modal = document.querySelector('.modal');
+const newBookForm = document.querySelector('.book-form');
 
 newBookButton.addEventListener('click', () => {
     modal.showModal();
@@ -9,7 +10,7 @@ newBookButton.addEventListener('click', () => {
 submitBookButton.addEventListener('click', () => {
     modal.close();
 })
-
+  
 let library = [
     new Book('Book 1', 'Author 1', '100 pages'),
     new Book('Book 2', 'Author 2', '100 pages'),
@@ -31,8 +32,16 @@ Book.prototype.removeBook = function() {
 }
   
 function addBookToLibrary() {
-
+    newBookForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        let bookTitleValue = event.currentTarget.title.value;
+        let bookAuthorValue = event.currentTarget.author.value;
+        let bookPagesValue = event.currentTarget.pages.value;
+        let bookReadStatusValue = event.currentTarget.checkbox.checked;
+    })
 }
+
+addBookToLibrary();
 
 for (let i = 0; i < library.length; i++) {
     const bookList = document.querySelector('.book-list');
