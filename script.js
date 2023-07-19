@@ -57,7 +57,6 @@ for (let i = 0; i < library.length; i++) {
 
     let readCheckerContainer = document.createElement('div');
     readCheckerContainer.classList.add('read-checker-container');
-    bookCard.appendChild(readCheckerContainer);
     let readCheckerLabel = document.createElement('label');
     readCheckerLabel.setAttribute('for', 'read-status-checker');
     readCheckerLabel.classList.add('checker');
@@ -66,8 +65,8 @@ for (let i = 0; i < library.length; i++) {
     readCheckerInput.setAttribute('type', 'checkbox');
     readCheckerInput.setAttribute('name', 'read-status-checker');
     readCheckerInput.setAttribute('id', 'read-status-checker');
-    readCheckerContainer.appendChild(readCheckerLabel);
     readCheckerContainer.appendChild(readCheckerInput);
+    bookCard.appendChild(readCheckerContainer);
     let removeBookButton = document.createElement('button')
     removeBookButton.classList.add('remove-book-button');
     removeBookButton.innerHTML = 'Remove';
