@@ -54,10 +54,11 @@ submitBookButton.addEventListener('click', () => {
   
 let library = [];
 
-function Book(title, author, pages) {
+function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
+    this.read = read;
 }
 
 Book.prototype.readStatus = function() {
@@ -65,7 +66,7 @@ Book.prototype.readStatus = function() {
 }
 
 Book.prototype.removeBook = function() {
-
+    
 }
   
 function addBookToLibrary() {
@@ -76,6 +77,7 @@ function addBookToLibrary() {
         let bookAuthorValue = 'By ' + event.currentTarget.author.value;
         let bookPagesValue = event.currentTarget.pages.value + ' pages';
         let bookReadStatusValue = event.currentTarget.checkbox.checked;
+        let checkboxChecker = document.querySelector('.read-status-checkbox')
 
         library.push(new Book(bookTitleValue, bookAuthorValue, bookPagesValue))
         displayBooks();
