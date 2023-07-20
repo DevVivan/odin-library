@@ -67,11 +67,10 @@ submitBookButton.addEventListener('click', () => {
   
 let library = [];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.read = read;
 }
 
 Book.prototype.readStatus = function() {
@@ -130,9 +129,7 @@ function addBookToLibrary() {
                 }
             })
 
-
             if (bookReadStatusValue === true) {
-                Book.read = 'read';
                 readCheckerInput.classList.add('read-styling');
                 readCheckerInput.innerHTML = 'Read';
                 readCheckerContainer.appendChild(readCheckerInput);
