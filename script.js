@@ -90,29 +90,67 @@ function addBookToLibrary() {
         let bookAuthorValue = 'By ' + event.currentTarget.author.value;
         let bookPagesValue = event.currentTarget.pages.value + ' pages';
         let bookReadStatusValue = event.currentTarget.checkbox.checked;
-        let checkboxChecker = document.querySelector('.read-status-checkbox')
 
         library.push(new Book(bookTitleValue, bookAuthorValue, bookPagesValue))
-        displayBooks();
 
-        let bookCard = document.createElement('div');
-        let readCheckerContainer = document.createElement('div');
-        readCheckerContainer.classList.add('read-checker-container');
-        let readCheckerInput = document.createElement('button');
+        for (let i = 0; i < library.length; i++) {
+            const bookList = document.querySelector('.book-list');
+            let bookCard = document.createElement('div');
+            bookCard.classList.add('book');
+            bookList.appendChild(bookCard);
+        
+            let bookTitle = document.createElement('h1');
+            bookTitle.classList.add('book-title', 'book-details');
+            bookTitle.innerHTML = library[i].title;
+            bookCard.appendChild(bookTitle);
+        
+            let bookAuthor = document.createElement('h2');
+            bookAuthor.classList.add('book-author', 'book-details');
+            bookAuthor.innerHTML = library[i].author;
+            bookCard.appendChild(bookAuthor);
+        
+            let bookPages = document.createElement('h2');
+            bookPages.classList.add('book-pages', 'book-details');
+            bookPages.innerHTML = library[i].pages;
+            bookCard.appendChild(bookPages);
+        
+            let readCheckerContainer = document.createElement('div');
+            readCheckerContainer.classList.add('read-checker-container');
+            let readCheckerInput = document.createElement('button');
+            
+            readCheckerInput.addEventListener('click', () => {
+                if (readCheckerInput.innerHTML === 'Not Read') {
+                    readCheckerInput.classList.remove('unread-styling')
+                    readCheckerInput.classList.add('read-styling');
+                    readCheckerInput.innerHTML = 'Read';
+                } else {
+                    readCheckerInput.classList.remove('read-styling')
+                    readCheckerInput.classList.add('unread-styling');
+                    readCheckerInput.innerHTML = 'Not Read';
+                }
+            })
 
-        if (bookReadStatusValue === true) {
-            Book.read = 'read';
-            readCheckerInput.classList.add('read-styling');
-            readCheckerInput.innerHTML = 'Read';
+
+            if (bookReadStatusValue === true) {
+                Book.read = 'read';
+                readCheckerInput.classList.add('read-styling');
+                readCheckerInput.innerHTML = 'Read';
+                readCheckerContainer.appendChild(readCheckerInput);
+                bookCard.appendChild(readCheckerContainer);
+            } else {
+                readCheckerInput.classList.add('unread-styling');
+                readCheckerInput.innerHTML = 'Not Read';
+                readCheckerContainer.appendChild(readCheckerInput);
+                bookCard.appendChild(readCheckerContainer);
+            }
+
             readCheckerContainer.appendChild(readCheckerInput);
             bookCard.appendChild(readCheckerContainer);
-            // make styling for checkbox:checked::after - there should be content of 'Read', a background color of #bfbfbf, and color of black.
-        } else {
-            readCheckerInput.classList.add('unread-styling');
-            readCheckerInput.innerHTML = 'Not Read';
-            readCheckerContainer.appendChild(readCheckerInput);
-            bookCard.appendChild(readCheckerContainer);
-            // keep doing the normal stuff with text content, checkbox::after and no unchecked - content of 'Not Read' 
+    
+            let removeBookButton = document.createElement('button')
+            removeBookButton.classList.add('remove-book-button');
+            removeBookButton.innerHTML = 'Remove';
+            bookCard.appendChild(removeBookButton);
         }
     })
 }
