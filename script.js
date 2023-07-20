@@ -60,17 +60,14 @@ submitBookButton.addEventListener('click', () => {
   
 let library = [];
 
-function Book(title, author, pages) {
+function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
+    this.read = read;
 }
 
 Book.prototype.removeBook = function() {
-
-}
-
-Book.prototype.readStatus = function() {
 
 }
   
@@ -111,29 +108,32 @@ function addBookToLibrary() {
             let readCheckerInput = document.createElement('button');
             
             readCheckerInput.addEventListener('click', () => {
-                if (readCheckerInput.innerHTML === 'Not Read') {
+                if (library[i] === 'Not Read') {
                     readCheckerInput.classList.remove('unread-styling')
                     readCheckerInput.classList.add('read-styling');
-                    readCheckerInput.innerHTML = 'Read';
+                    library[i] = 'Read';
+                    readCheckerInput.innerHTML = library[i];
                 } else {
                     readCheckerInput.classList.remove('read-styling')
                     readCheckerInput.classList.add('unread-styling');
-                    readCheckerInput.innerHTML = 'Not Read';
+                    library[i] = 'Not Read';
+                    readCheckerInput.innerHTML = library[i];
                 }
             })
 
             if (bookReadStatusValue === true) {
                 readCheckerInput.classList.add('read-styling');
-                readCheckerInput.innerHTML = 'Read';
+                library[i] = 'Read';
                 readCheckerContainer.appendChild(readCheckerInput);
                 bookCard.appendChild(readCheckerContainer);
             } else {
                 readCheckerInput.classList.add('unread-styling');
-                readCheckerInput.innerHTML = 'Not Read';
+                library[i] = 'Not Read';
                 readCheckerContainer.appendChild(readCheckerInput);
                 bookCard.appendChild(readCheckerContainer);
             }
 
+            readCheckerInput.innerHTML = library[i];
             readCheckerContainer.appendChild(readCheckerInput);
             bookCard.appendChild(readCheckerContainer);
     
