@@ -27,16 +27,17 @@ function displayBooks() {
     
         let readCheckerContainer = document.createElement('div');
         readCheckerContainer.classList.add('read-checker-container');
-        let readCheckerLabel = document.createElement('label');
-        readCheckerLabel.setAttribute('for', 'read-status-checker');
-        readCheckerLabel.classList.add('checker');
-        let readCheckerInput = document.createElement('input');
+        // let readCheckerLabel = document.createElement('label');
+        // readCheckerLabel.setAttribute('for', 'read-status-checker');
+        // readCheckerLabel.classList.add('checker');
+        let readCheckerInput = document.createElement('button');
         readCheckerInput.classList.add('read-status-checkbox');
         readCheckerInput.setAttribute('type', 'checkbox');
         readCheckerInput.setAttribute('name', 'read-status-checker');
         readCheckerInput.setAttribute('id', 'read-status-checker');
         readCheckerContainer.appendChild(readCheckerInput);
         bookCard.appendChild(readCheckerContainer);
+
         let removeBookButton = document.createElement('button')
         removeBookButton.classList.add('remove-book-button');
         removeBookButton.innerHTML = 'Remove';
@@ -83,6 +84,7 @@ function addBookToLibrary() {
         displayBooks();
 
         if (bookReadStatusValue === true) {
+            Book.read = 'read';
             // make styling for checkbox:checked::after - there should be content of 'Read', a background color of #bfbfbf, and color of black.
         } else {
             // keep doing the normal stuff with text content, checkbox::after and no unchecked - content of 'Not Read' 
