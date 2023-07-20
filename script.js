@@ -31,10 +31,22 @@ function displayBooks() {
         // readCheckerLabel.setAttribute('for', 'read-status-checker');
         // readCheckerLabel.classList.add('checker');
         let readCheckerInput = document.createElement('button');
-        readCheckerInput.classList.add('read-status-checkbox');
-        readCheckerInput.setAttribute('type', 'checkbox');
-        readCheckerInput.setAttribute('name', 'read-status-checker');
-        readCheckerInput.setAttribute('id', 'read-status-checker');
+        
+        readCheckerInput.addEventListener('click', () => {
+            if (readCheckerInput.innerHTML === 'Not Read') {
+                readCheckerInput.classList.remove('unread-styling')
+                readCheckerInput.classList.add('read-styling');
+                readCheckerInput.innerHTML = 'Read';
+            } else {
+                readCheckerInput.classList.remove('read-styling')
+                readCheckerInput.classList.add('unread-styling');
+                readCheckerInput.innerHTML = 'Not Read';
+            }
+        })
+        // readCheckerInput.classList.add('read-status-checkbox');
+        // readCheckerInput.setAttribute('type', 'checkbox');
+        // readCheckerInput.setAttribute('name', 'read-status-checker');
+        // readCheckerInput.setAttribute('id', 'read-status-checker');
         readCheckerContainer.appendChild(readCheckerInput);
         bookCard.appendChild(readCheckerContainer);
 

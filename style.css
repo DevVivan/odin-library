@@ -99,24 +99,52 @@
     font-size: 15px;
 }
 
-.read-status-checkbox:checked::after {
+.read-styling {
+    background-color: #bfbfbf;
+    width: 200px;
+    height: 40px;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.unread-styling {
+    width: 200px;
+    height: 40px;
+    background-color: #e3e3e3;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* .read-status-checkbox:checked::after {
     width: 100%;
     height: 100%;
     content: 'Read'
-}
+} */
 
-.read-status-checkbox:checked {
+/* .read-status-checkbox:checked {
     background-color: #bfbfbf;
     color: black;
-}
+} */
 
-.read-status-checkbox::after {
+/* .read-status-checkbox::after {
     content: 'Not Read';
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 15px;
-}
+} */
 
 .remove-book-button {
     width: 200px;
