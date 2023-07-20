@@ -95,10 +95,23 @@ function addBookToLibrary() {
         library.push(new Book(bookTitleValue, bookAuthorValue, bookPagesValue))
         displayBooks();
 
+        let bookCard = document.createElement('div');
+        let readCheckerContainer = document.createElement('div');
+        readCheckerContainer.classList.add('read-checker-container');
+        let readCheckerInput = document.createElement('button');
+
         if (bookReadStatusValue === true) {
             Book.read = 'read';
+            readCheckerInput.classList.add('read-styling');
+            readCheckerInput.innerHTML = 'Read';
+            readCheckerContainer.appendChild(readCheckerInput);
+            bookCard.appendChild(readCheckerContainer);
             // make styling for checkbox:checked::after - there should be content of 'Read', a background color of #bfbfbf, and color of black.
         } else {
+            readCheckerInput.classList.add('unread-styling');
+            readCheckerInput.innerHTML = 'Not Read';
+            readCheckerContainer.appendChild(readCheckerInput);
+            bookCard.appendChild(readCheckerContainer);
             // keep doing the normal stuff with text content, checkbox::after and no unchecked - content of 'Not Read' 
         }
     })
