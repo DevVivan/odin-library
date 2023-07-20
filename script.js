@@ -27,9 +27,6 @@ function displayBooks() {
     
         let readCheckerContainer = document.createElement('div');
         readCheckerContainer.classList.add('read-checker-container');
-        // let readCheckerLabel = document.createElement('label');
-        // readCheckerLabel.setAttribute('for', 'read-status-checker');
-        // readCheckerLabel.classList.add('checker');
         let readCheckerInput = document.createElement('button');
         
         readCheckerInput.addEventListener('click', () => {
@@ -43,10 +40,6 @@ function displayBooks() {
                 readCheckerInput.innerHTML = 'Not Read';
             }
         })
-        // readCheckerInput.classList.add('read-status-checkbox');
-        // readCheckerInput.setAttribute('type', 'checkbox');
-        // readCheckerInput.setAttribute('name', 'read-status-checker');
-        // readCheckerInput.setAttribute('id', 'read-status-checker');
         readCheckerContainer.appendChild(readCheckerInput);
         bookCard.appendChild(readCheckerContainer);
 
@@ -73,12 +66,12 @@ function Book(title, author, pages) {
     this.pages = pages;
 }
 
-Book.prototype.readStatus = function() {
+Book.prototype.removeBook = function() {
 
 }
 
-Book.prototype.removeBook = function() {
-    
+Book.prototype.readStatus = function() {
+
 }
   
 function addBookToLibrary() {
