@@ -129,25 +129,6 @@
     cursor: pointer;
 }
 
-/* .read-status-checkbox:checked::after {
-    width: 100%;
-    height: 100%;
-    content: 'Read'
-} */
-
-/* .read-status-checkbox:checked {
-    background-color: #bfbfbf;
-    color: black;
-} */
-
-/* .read-status-checkbox::after {
-    content: 'Not Read';
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-} */
-
 .remove-book-button {
     width: 200px;
     height: 40px;
