@@ -19,10 +19,6 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;
 }
-
-Book.prototype.removeBook = function() {
-    console.log('hi')
-}
   
 function addBookToLibrary() {
     newBookForm.addEventListener('submit', function(event) {
