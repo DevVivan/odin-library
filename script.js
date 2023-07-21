@@ -21,7 +21,7 @@ function Book(title, author, pages, read) {
 }
 
 Book.prototype.removeBook = function() {
-
+    console.log('hi')
 }
   
 function addBookToLibrary() {
@@ -39,7 +39,6 @@ function addBookToLibrary() {
             const bookList = document.querySelector('.book-list');
             let bookCard = document.createElement('div');
             bookCard.classList.add('book');
-            bookList.appendChild(bookCard);
         
             let bookTitle = document.createElement('h1');
             bookTitle.classList.add('book-title', 'book-details');
@@ -94,6 +93,14 @@ function addBookToLibrary() {
             removeBookButton.classList.add('remove-book-button');
             removeBookButton.innerHTML = 'Remove';
             bookCard.appendChild(removeBookButton);
+
+            removeBookButton.addEventListener('click', () => {
+                const bookIndex = library.indexOf(library[i]);
+                library.splice(bookIndex, 1);
+                bookCard.remove();
+            });
+
+            bookList.appendChild(bookCard);
         }
     })
 }
