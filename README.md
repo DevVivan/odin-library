@@ -1,6 +1,6 @@
 # Library 
 
-This was `library`, the [*8th project*]([https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-admin-dashboard](https://www.theodinproject.com/lessons/node-path-javascript-library)) within the Odin Project curriculum and the 1st one in the JavaScript course. This was a project that made students utilise object constructors to organize their code and create a fully fledged library to track read and unread books.
+This was `library`, the [*8th project*](https://www.theodinproject.com/lessons/node-path-javascript-library) within the Odin Project curriculum and the 1st one in the JavaScript course. This was a project that made students utilise object constructors to organize their code and create a fully fledged library to track read and unread books.
 
 ## Links
 
