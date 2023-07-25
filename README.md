@@ -26,6 +26,11 @@ This was `library`, the [*8th project*](https://www.theodinproject.com/lessons/n
 - Using object constructors to organise code
    - Use object constructors within arrays
 - Load content on DOM using JavaScript
+- Using classes
+
+### Other
+
+- Git branchinc
 
 ## Images
 
